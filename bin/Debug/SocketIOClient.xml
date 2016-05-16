@@ -8,7 +8,12 @@
             <summary>
             Class to emulate socket.io javascript client capabilities for .net classes
             </summary>
-            <exception cref = "T:System.ArgumentException">Connection for wss or https urls</exception>  
+            <exception cref="T:System.ArgumentException">Connection for wss or https urls</exception>  
+        </member>
+        <member name="T:SocketIOClient.IClient">
+            <summary>
+            C# Socket.IO client interface
+            </summary>
         </member>
         <member name="F:SocketIOClient.Client.uri">
             <summary>
@@ -30,18 +35,6 @@
             By Default, use WebSocketVersion.Rfc6455
             </summary>
         </member>
-        <member name="E:SocketIOClient.Client.Opened">
-            <summary>
-            Opened event comes from the underlying websocket client connection being opened.  This is not the same as socket.io returning the 'connect' event
-            </summary>
-        </member>
-        <member name="E:SocketIOClient.Client.SocketConnectionClosed">
-            <summary>
-            <para>The underlying websocket connection has closed (unexpectedly)</para>
-            <para>The Socket.IO service may have closed the connection due to a heartbeat timeout, or the connection was just broken</para>
-            <para>Call the client.Connect() method to re-establish the connection</para>
-            </summary>
-        </member>
         <member name="F:SocketIOClient.Client.MessageQueueEmptyEvent">
             <summary>
             ResetEvent for Outbound MessageQueue Empty Event - all pending messages have been sent
@@ -52,29 +45,9 @@
             Connection Open Event
             </summary>
         </member>
-        <member name="P:SocketIOClient.Client.RetryConnectionAttempts">
-            <summary>
-            Number of reconnection attempts before raising SocketConnectionClosed event - (default = 3)
-            </summary>
-        </member>
         <member name="F:SocketIOClient.Client.LastErrorMessage">
             <summary>
             Value of the last error message text  
-            </summary>
-        </member>
-        <member name="P:SocketIOClient.Client.HandShake">
-            <summary>
-            Represents the initial handshake parameters received from the socket.io service (SID, HeartbeatTimeout etc)
-            </summary>
-        </member>
-        <member name="P:SocketIOClient.Client.IsConnected">
-            <summary>
-            Returns boolean of ReadyState == WebSocketState.Open
-            </summary>
-        </member>
-        <member name="P:SocketIOClient.Client.ReadyState">
-            <summary>
-            Connection state of websocket client: None, Connecting, Open, Closing, Closed
             </summary>
         </member>
         <member name="M:SocketIOClient.Client.Connect">
@@ -164,9 +137,36 @@
             <returns>Handshake object with sid value</returns>
             <example>DownloadString: 13052140081337757257:15:25:websocket,htmlfile,xhr-polling,jsonp-polling</example>
         </member>
-        <member name="P:SocketIOClient.SocketIOHandshake.HeartbeatInterval">
+        <member name="E:SocketIOClient.Client.Opened">
             <summary>
-            The HearbeatInterval will be approximately 20% faster than the Socket.IO service indicated was required
+            Opened event comes from the underlying websocket client connection being opened.  This is not the same as socket.io returning the 'connect' event
+            </summary>
+        </member>
+        <member name="E:SocketIOClient.Client.SocketConnectionClosed">
+            <summary>
+            <para>The underlying websocket connection has closed (unexpectedly)</para>
+            <para>The Socket.IO service may have closed the connection due to a heartbeat timeout, or the connection was just broken</para>
+            <para>Call the client.Connect() method to re-establish the connection</para>
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Client.RetryConnectionAttempts">
+            <summary>
+            Number of reconnection attempts before raising SocketConnectionClosed event - (default = 3)
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Client.HandShake">
+            <summary>
+            Represents the initial handshake parameters received from the socket.io service (SID, HeartbeatTimeout etc)
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Client.IsConnected">
+            <summary>
+            Returns boolean of ReadyState == WebSocketState.Open
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Client.ReadyState">
+            <summary>
+            Connection state of websocket client: None, Connecting, Open, Closing, Closed
             </summary>
         </member>
         <member name="M:SocketIOClient.SocketIOHandshake.UpdateFromSocketIOResponse(System.String)">
@@ -175,73 +175,16 @@
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="T:SocketIOClient.IClient">
+        <member name="P:SocketIOClient.SocketIOHandshake.HeartbeatInterval">
             <summary>
-            C# Socket.IO client interface
+            The HearbeatInterval will be approximately 20% faster than the Socket.IO service indicated was required
             </summary>
-        </member>
-        <member name="T:SocketIOClient.Messages.DisconnectMessage">
-            <summary>
-            Signals disconnection. If no endpoint is specified, disconnects the entire socket.
-            </summary>
-            <remarks>Disconnect a socket connected to the /test endpoint:
-            	0::/test
-            </remarks>
         </member>
         <member name="T:SocketIOClient.Messages.Message">
             <summary>
             All Socket.IO messages have to be encoded before they're sent, and decoded when they're received.
             They all have the format of: [message type] ':' [message id ('+')] ':' [message endpoint] (':' [message data])
             </summary>
-        </member>
-        <member name="P:SocketIOClient.Messages.Message.MessageType">
-            <summary>
-            The message type represents a single digit integer [0-8].
-            </summary>
-        </member>
-        <member name="P:SocketIOClient.Messages.Message.AckId">
-            <summary>
-            The message id is an incremental integer, required for ACKs (can be ommitted). 
-            If the message id is followed by a +, the ACK is not handled by socket.io, but by the user instead.
-            </summary>
-        </member>
-        <member name="P:SocketIOClient.Messages.Message.Endpoint">
-            <summary>
-            Socket.IO has built-in support for multiple channels of communication (which we call "multiple sockets"). 
-            Each socket is identified by an endpoint (can be omitted).
-            </summary>
-        </member>
-        <member name="P:SocketIOClient.Messages.Message.MessageText">
-            <summary>
-            String value of the message
-            </summary>
-        </member>
-        <member name="P:SocketIOClient.Messages.Message.Event">
-            <summary>
-            String value of the Event
-            </summary>
-        </member>
-        <member name="P:SocketIOClient.Messages.Message.Encoded">
-            <summary>
-            <para>Messages have to be encoded before they're sent. The structure of a message is as follows:</para>
-            <para>[message type] ':' [message id ('+')] ':' [message endpoint] (':' [message data])</para>
-            <para>All message payloads are sent as strings</para>
-            </summary>
-        </member>
-        <member name="T:SocketIOClient.Messages.ConnectMessage">
-            <summary>
-            Signals a connection to the endpoint. Once the server receives it, it's echoed back to the client
-            </summary>
-            <remarks>If the client is trying to connect to the endpoint /test, a message like this will be delivered:
-            	'1::' [path] [query]
-            </remarks>
-        </member>
-        <member name="M:SocketIOClient.Messages.ErrorMessage.Deserialize(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="rawMessage">'7::' [endpoint] ':' [reason] '+' [advice]</param>
-            <returns>ErrorMessage</returns>
         </member>
         <member name="T:SocketIOClient.Messages.IMessage">
             <summary>
@@ -284,6 +227,63 @@
             <para>Socket.IO encoded message structure - represents the actual message string sent to Socket.IO </para>
             <para>[message type] ':' [message id ('+')] ':' [message endpoint] (':' [message data]) </para>
             </summary>
+        </member>
+        <member name="P:SocketIOClient.Messages.Message.MessageType">
+            <summary>
+            The message type represents a single digit integer [0-8].
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Messages.Message.AckId">
+            <summary>
+            The message id is an incremental integer, required for ACKs (can be ommitted). 
+            If the message id is followed by a +, the ACK is not handled by socket.io, but by the user instead.
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Messages.Message.Endpoint">
+            <summary>
+            Socket.IO has built-in support for multiple channels of communication (which we call "multiple sockets"). 
+            Each socket is identified by an endpoint (can be omitted).
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Messages.Message.MessageText">
+            <summary>
+            String value of the message
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Messages.Message.Event">
+            <summary>
+            String value of the Event
+            </summary>
+        </member>
+        <member name="P:SocketIOClient.Messages.Message.Encoded">
+            <summary>
+            <para>Messages have to be encoded before they're sent. The structure of a message is as follows:</para>
+            <para>[message type] ':' [message id ('+')] ':' [message endpoint] (':' [message data])</para>
+            <para>All message payloads are sent as strings</para>
+            </summary>
+        </member>
+        <member name="T:SocketIOClient.Messages.DisconnectMessage">
+            <summary>
+            Signals disconnection. If no endpoint is specified, disconnects the entire socket.
+            </summary>
+            <remarks>Disconnect a socket connected to the /test endpoint:
+            	0::/test
+            </remarks>
+        </member>
+        <member name="T:SocketIOClient.Messages.ConnectMessage">
+            <summary>
+            Signals a connection to the endpoint. Once the server receives it, it's echoed back to the client
+            </summary>
+            <remarks>If the client is trying to connect to the endpoint /test, a message like this will be delivered:
+            	'1::' [path] [query]
+            </remarks>
+        </member>
+        <member name="M:SocketIOClient.Messages.ErrorMessage.Deserialize(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="rawMessage">'7::' [endpoint] ':' [reason] '+' [advice]</param>
+            <returns>ErrorMessage</returns>
         </member>
         <member name="T:SocketIOClient.Messages.NoopMessage">
             <summary>

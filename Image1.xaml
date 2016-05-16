@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientApp"
         mc:Ignorable="d"
-        Title="Window1" Height="500" Width="500">
+        Title="Window1" WindowState="Maximized" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid>
         <Border Grid.Row="1" Name="border">
-            <Image x:Name="image" Height="500" Width="500" Margin="15" Stretch="UniformToFill" VerticalAlignment="Top"/>
+            <Image x:Name="image"  Stretch="Uniform" VerticalAlignment="Center"/>
         </Border>
     </Grid>
 </Window>

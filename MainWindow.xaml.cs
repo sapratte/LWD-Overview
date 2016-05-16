@@ -25,7 +25,7 @@ namespace ClientApp{
     /// </summary>
 
     public partial class MainWindow : Window {
-        private string address = "192.168.0.192";
+        private string address = "192.168.0.143";
         //private string address = "10.12.35.161";
         private int port = 3000;
         string base64buffer = "";
@@ -233,6 +233,18 @@ namespace ClientApp{
         public void clientRegistered(object sender, SOD.OnRegisterEventArgs e) {
             Console.WriteLine("Client Registered with status code: " + e.jsonData.ToString());
             updateStatus(" Register Status: " + e.status);
+
+            Console.WriteLine("HERE ________________ SEND");
+            Console.WriteLine("WINDOW WIDTH " + w.ActualWidth + " HEIGHT " + w.ActualHeight);
+
+            Dispatcher.BeginInvoke(new ThreadStart(() =>
+            {
+                Dictionary<string, string> dataToSendBack = new Dictionary<string, string>(){
+                    { "width", w.image.ActualWidth.ToString() },
+                    { "height", w.image.ActualHeight.ToString() }
+                };
+                this.SOD.SendToDevices.All("setImgSize", dataToSendBack);
+            }));
         }
 
         public void stringReceived(object sender, SOD.onStringEventArgs e) {

@@ -151,11 +151,6 @@
             <param name="width">The width of the line in pixels</param>
             <param name="name">The given name of the line.</param>
         </member>
-        <member name="P:SOD_CS_Library.Projector.TransferElementWithSpeed">
-            <summary>
-            Transfer a given element with speed options of Slow, Moderate or Fast.
-            </summary>
-        </member>
         <member name="M:SOD_CS_Library.Projector.SOD_CS_Library#ITransferSpeed#Slow(System.String,System.String,System.Double,System.Double,System.Action{System.String})">
             <summary>
             Transfer a given element with speed option of Slow.
@@ -182,6 +177,11 @@
             <param name="elementNo">The ID of the element to be moved</param>
             <param name="new_x">The new x position of the element on the window</param>
             <param name="new_y">The new y position of the element on the window</param>
+        </member>
+        <member name="P:SOD_CS_Library.Projector.TransferElementWithSpeed">
+            <summary>
+            Transfer a given element with speed options of Slow, Moderate or Fast.
+            </summary>
         </member>
         <member name="M:SOD_CS_Library.SOD.#ctor(System.String,System.Int32)">
             <summary>
