@@ -1,37 +1,3 @@
-c:\users\matheus fernandes\documents\visual studio 2015\Projects\ClientApp\ClientApp\bin\Debug\ClientApp.exe.config
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\ClientApp.exe
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\ClientApp.pdb
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\MainWindow.g.cs
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\App.g.cs
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\ClientApp_MarkupCompile.cache
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\ClientApp_MarkupCompile.lref
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\MainWindow.baml
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\ClientApp.g.resources
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\ClientApp.Properties.Resources.resources
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\ClientApp.csproj.GenerateResource.Cache
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\ClientApp.exe
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\ClientApp.pdb
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\ClientApp.csprojResolveAssemblyReference.cache
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\SocketIOClient.dll
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\SOD_CS_Library.dll
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\WebSocket4Net.dll
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\SocketIOClient.pdb
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\SocketIOClient.xml
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\SOD_CS_Library.pdb
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\SOD_CS_Library.xml
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\Image1.g.cs
-C:\Users\Matheus Fernandes\Documents\Visual Studio 2015\Projects\ClientApp\ClientApp\obj\Debug\Image1.baml
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.csprojResolveAssemblyReference.cache
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.csproj.ClientApp.exe.config
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\MainWindow.g.cs
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\Image1.g.cs
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\App.g.cs
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp_MarkupCompile.cache
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp_MarkupCompile.lref
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.exe
-C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.pdb
 C:\Users\sydneypratte\LWD-Overview\bin\Debug\ClientApp.exe.config
 C:\Users\sydneypratte\LWD-Overview\bin\Debug\ClientApp.exe
 C:\Users\sydneypratte\LWD-Overview\bin\Debug\ClientApp.pdb
@@ -42,9 +8,17 @@ C:\Users\sydneypratte\LWD-Overview\bin\Debug\SocketIOClient.pdb
 C:\Users\sydneypratte\LWD-Overview\bin\Debug\SocketIOClient.xml
 C:\Users\sydneypratte\LWD-Overview\bin\Debug\SOD_CS_Library.pdb
 C:\Users\sydneypratte\LWD-Overview\bin\Debug\SOD_CS_Library.xml
-C:\Users\sydneypratte\LWD-Overview\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.csprojResolveAssemblyReference.cache
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.csproj.ClientApp.exe.config
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\MainWindow.g.cs
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\Image1.g.cs
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\App.g.cs
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp_MarkupCompile.cache
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp_MarkupCompile.lref
 C:\Users\sydneypratte\LWD-Overview\obj\Debug\MainWindow.baml
 C:\Users\sydneypratte\LWD-Overview\obj\Debug\Image1.baml
 C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.g.resources
 C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.Properties.Resources.resources
 C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.csproj.GenerateResource.Cache
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.exe
+C:\Users\sydneypratte\LWD-Overview\obj\Debug\ClientApp.pdb

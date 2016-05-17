@@ -25,7 +25,7 @@ namespace ClientApp{
     /// </summary>
 
     public partial class MainWindow : Window {
-        private string address = "192.168.0.143";
+        private string address = "192.168.20.96";
         //private string address = "10.12.35.161";
         private int port = 3000;
         string base64buffer = "";

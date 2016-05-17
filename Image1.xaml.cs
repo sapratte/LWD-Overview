@@ -39,15 +39,20 @@ namespace ClientApp {
         {
             InitializeComponent();
 
-            demo_questions = new string[3] {
+            demo_questions = new string[6] {
                 "On the map provided, name the capital city of France.",
+                "On the map provided, name the major city shown in Italy.",
                 "Based on the visualization provided, what is the population of the Ethiopian Wolf and what is its Endangered status?",
-                "In the image provided, find the milk jug."
+                "Based on the visualization provided, what is the population and the endangered status of the Cheetah?",
+                "In the image provided, find the milk jug.",
+                "In the image provided, find a mug with a heart on it."
             };
 
-            demo_hint_images = new Uri[2] {
+            demo_hint_images = new Uri[4] {
                 new Uri(@"\images\wolf.png", UriKind.Relative),
-                new Uri(@"\images\milk_jug.png", UriKind.Relative)
+                new Uri(@"\images\cheetah.png", UriKind.Relative),
+                new Uri(@"\images\milk_jug.png", UriKind.Relative),
+                new Uri(@"\images\mug.png", UriKind.Relative)
             };
 
             task_questions = new string[15] {
@@ -119,8 +124,12 @@ namespace ClientApp {
 
             if (isDemo.IsChecked == true)
             {
-                round++;
-                if (task >= 3 || round >= 3)
+                if (task == 2 || task == 4)
+                {
+                    round++;
+                }
+                
+                if (task >= 6 || round >= 3)
                 {
                     task = 0;
                     round = 0;
@@ -128,10 +137,13 @@ namespace ClientApp {
 
                 text_block.Text = demo_questions[task];
                 if (round > 0) {
-                    hint_img.Source = new BitmapImage(demo_hint_images[task - 1]);
+
+                    legend_grid.Visibility = System.Windows.Visibility.Hidden;
+                    hint_img.Source = new BitmapImage(demo_hint_images[task - 2]);
                 }
                 else
                 {
+                    legend_grid.Visibility = System.Windows.Visibility.Visible;
                     hint_img.Source = null;
                 }
 

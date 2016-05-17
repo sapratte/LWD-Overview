@@ -10,12 +10,19 @@
         <Border Grid.Row="1" Name="border">
             <Image x:Name="image"  Stretch="Uniform" VerticalAlignment="Center"/>
         </Border>
-        <Border CornerRadius="50" BorderBrush="White" BorderThickness="2">
-            <StackPanel Height="Auto" Width="350" Margin="0, 0, 50, 100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#FFFBBE5F">
-                <TextBlock Name="text_block" Padding="10" Foreground="#FF059CCE" FontSize="20" FontWeight="Bold" TextAlignment="Center" TextWrapping="Wrap" />
-                <Image Name="hint_img" Width="60" Height="60"/>
-            </StackPanel>
-        </Border>
+
+        <Grid Name="legend_grid"  Background="#FFFBBE5F" Height="80" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image Grid.Column="1" Source="/images/capitol.png" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+            <TextBlock Grid.Column="2" Text="capital city" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40, 5, 0, 0" FontSize="20"/>
+            <Image Grid.Column="1" Source="/images/major.png" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 50, 10, 0"/>
+            <TextBlock Grid.Column="2" Text="major city" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40, 45, 0, 0" FontSize="20"/>
+        </Grid>
+        
+        <StackPanel Height="Auto" Width="350" Margin="0, 0, 50, 100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#FFFBBE5F">
+            <TextBlock Name="text_block" Padding="10" Foreground="#FF059CCE" FontSize="20" FontWeight="Bold" TextAlignment="Center" TextWrapping="Wrap" />
+            <Image Name="hint_img" Width="80" Height="80"/>
+        </StackPanel>
+        
         <CheckBox Name="isDemo" Margin="0, 0, 110, 0" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsChecked="True" />
         <Button Name="nextlevel_button" Height="50" Width="100" Margin="0, 0, 10, 0" Content="NEXT" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="nextlevel_button_Click"/>
     </Grid>

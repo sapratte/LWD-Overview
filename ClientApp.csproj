@@ -170,6 +170,10 @@
     <Resource Include="images\walia_ibex.png" />
     <Resource Include="images\wolf.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\cheetah.png" />
+    <Resource Include="images\mug.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
