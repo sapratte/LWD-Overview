@@ -241,7 +241,8 @@ namespace ClientApp{
             {
                 Dictionary<string, string> dataToSendBack = new Dictionary<string, string>(){
                     { "width", w.image.ActualWidth.ToString() },
-                    { "height", w.image.ActualHeight.ToString() }
+                    { "height", w.image.ActualHeight.ToString() },
+                    {"round", w.round.ToString()}
                 };
                 this.SOD.SendToDevices.All("setImgSize", dataToSendBack);
             }));

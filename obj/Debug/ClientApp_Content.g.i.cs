@@ -8,8 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("endangered-safari-square.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("map.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("vissearch1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/capitol.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/carrots.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/dryad_monkey.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/golden_cat.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gorilla.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/greater_kudu.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/keys.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/major.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/milk_jug.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/rolling_pin.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/scissors.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/stars.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/walia_ibex.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wolf.png")]
 
 

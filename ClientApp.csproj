@@ -150,7 +150,25 @@
   <ItemGroup>
     <Resource Include="ENDANGERED-SAFARI-SQUARE.png" />
     <Resource Include="map.png" />
-    <Resource Include="vissearch1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="vissearch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\capitol.png" />
+    <Resource Include="images\carrots.png" />
+    <Resource Include="images\dryad_monkey.png" />
+    <Resource Include="images\golden_cat.png" />
+    <Resource Include="images\gorilla.png" />
+    <Resource Include="images\greater_kudu.png" />
+    <Resource Include="images\keys.png" />
+    <Resource Include="images\major.png" />
+    <Resource Include="images\milk_jug.png" />
+    <Resource Include="images\rolling_pin.png" />
+    <Resource Include="images\scissors.png" />
+    <Resource Include="images\stars.png" />
+    <Resource Include="images\walia_ibex.png" />
+    <Resource Include="images\wolf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

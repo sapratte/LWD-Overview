@@ -23,12 +23,81 @@ namespace ClientApp {
         private Point origin;
         private bool[] flags = new bool[2];
         public SOD_CS_Library.SOD SOD;
+
+        public string[] task_questions;
+        public string[] demo_questions;
+
+        public Uri[] round_image;
+        public Uri[] hint_images;
+        public Uri[] demo_hint_images;
+
+
+        public int task = 0;
+        public int round = 0;
+
         public Image1()
         {
             InitializeComponent();
 
+            demo_questions = new string[3] {
+                "On the map provided, name the capital city of France.",
+                "Based on the visualization provided, what is the population of the Ethiopian Wolf and what is its Endangered status?",
+                "In the image provided, find the milk jug."
+            };
 
-            image.Source = new BitmapImage(new Uri(@"\ENDANGERED-SAFARI-SQUARE.png", UriKind.Relative));
+            demo_hint_images = new Uri[2] {
+                new Uri(@"\images\wolf.png", UriKind.Relative),
+                new Uri(@"\images\milk_jug.png", UriKind.Relative)
+            };
+
+            task_questions = new string[15] {
+                "On the map provided, name the capital city of Poland",
+                "On the map provided, name all the major cities in Germany",
+                "On the map provided, name the countries that surround Luxembourg",
+                "On the map provided, name the country with the capital city of Podgorica",
+                "On the map provided, name the country that borders the South of the Black Sea",
+                "Based on the visualization provided, what is the Endangered status of the Greater Kudu?",
+                "Based on the visualization provided, what is the population of the Walia Ibex?",
+                "Based on the visualization provided, what is the endangered status of the African Golden Cat and what is its population? ",
+                "Based on the visualization provided, what is the Endangered status of the Dryad Money?",
+                "Based on the visualization provided, what is the population of the Eastern Gorilla and what is its Endangered status?",
+                "In the image provided, find a rolling pin.",
+                "In the image provided, find a bundle of carrots.",
+                "In the image provided, find a pair of scissors.",
+                "In the image provided, find a ring of keys.",
+                "In the image provided, find 3 stars."
+            };
+
+            round_image = new Uri[3] {
+                new Uri(@"\map.png", UriKind.Relative),
+                new Uri(@"\ENDANGERED-SAFARI-SQUARE.png", UriKind.Relative),
+                new Uri(@"\vissearch1.png", UriKind.Relative)
+            };
+
+            hint_images = new Uri[10] {
+                new Uri(@"\images\greater_kudu.png", UriKind.Relative),
+                new Uri(@"\images\walia_ibex.png", UriKind.Relative),
+                new Uri(@"\images\golden_cat.png", UriKind.Relative),
+                new Uri(@"\images\dryad_monkey.png", UriKind.Relative),
+                new Uri(@"\images\gorilla.png", UriKind.Relative),
+                new Uri(@"\images\rolling_pin.png", UriKind.Relative),
+                new Uri(@"\images\carrots.png", UriKind.Relative),
+                new Uri(@"\images\scissors.png", UriKind.Relative),
+                new Uri(@"\images\keys.png", UriKind.Relative),
+                new Uri(@"\images\stars.png", UriKind.Relative)
+            };
+
+
+            if (isDemo.IsChecked == true)
+            {
+                text_block.Text = demo_questions[task];
+            }
+            else
+            {
+                text_block.Text = task_questions[task];
+            }
+
+            image.Source = new BitmapImage(round_image[round]);
 
             TransformGroup group = new TransformGroup();
             TranslateTransform tt = new TranslateTransform();
@@ -39,12 +108,83 @@ namespace ClientApp {
             image.MouseLeftButtonUp += image_MouseLeftButtonUp;
             image.MouseMove += image_MouseMove;
 
+
+           
         }
 
-        public void setImageSize(int width, int height)
+        private void nextlevel_button_Click(object sender, RoutedEventArgs e)
         {
+            // go to next task
+            task++;
 
+            if (isDemo.IsChecked == true)
+            {
+                round++;
+                if (task >= 3 || round >= 3)
+                {
+                    task = 0;
+                    round = 0;
+                }
+
+                text_block.Text = demo_questions[task];
+                if (round > 0) {
+                    hint_img.Source = new BitmapImage(demo_hint_images[task - 1]);
+                }
+                else
+                {
+                    hint_img.Source = null;
+                }
+
+                image.Source = new BitmapImage(round_image[round]);
+
+                Console.WriteLine("\n\n\n\nHeight: " + image.ActualHeight + " Width: " + image.ActualWidth);
+
+                Dictionary<string, string> dataToSendBack = new Dictionary<string, string>(){
+                    { "width", image.ActualWidth.ToString() },
+                    { "height", image.ActualHeight.ToString() },
+                    {"round", round.ToString()}
+                };
+                this.SOD.SendToDevices.All("setImgSize", dataToSendBack);
+
+            }
+            else
+            {
+                // end ;loop back
+                if (task >= 15)
+                {
+                    round = 0;
+                    task = 0;
+                    image.Source = new BitmapImage(round_image[round]);
+                }
+                // switch image for new round
+                if (task == 5 || task == 10)
+                {
+                    round++;
+                    image.Source = new BitmapImage(round_image[round]);
+                    Dictionary<string, string> dataToSendBack = new Dictionary<string, string>(){
+                        { "width", image.ActualWidth.ToString() },
+                        { "height", image.ActualHeight.ToString() },
+                        {"round", round.ToString()}
+                    };
+                        this.SOD.SendToDevices.All("setImgSize", dataToSendBack);
+                }
+
+                text_block.Text = task_questions[task];
+
+                if (round > 0)
+                {
+                    hint_img.Source = new BitmapImage(hint_images[task - 5]);
+                }
+                else
+                {
+                    hint_img.Source = null;
+                }
+
+                
+            }
+        
         }
+ 
 
         private void image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -122,5 +262,7 @@ namespace ClientApp {
         {
             skipTo(p);
         }
+
+        
     }
 }
